@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email        = ["patrik@starkast.net"]
   s.homepage     = "https://github.com/spinels"
   s.summary      = "Spinels."
-  s.description  = "Spinels."
+  s.description  = "Spinels placeholder gem."
   s.license      = "MIT"
   s.files        = Dir.glob("{lib}/**/*") + %w[README.md]
   s.require_path = "lib"
