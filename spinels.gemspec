@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version      = Spinels::VERSION
   s.authors      = ["Patrik Ragnarsson"]
   s.email        = ["patrik@starkast.net"]
-  s.homepage     = "https://github.com/spinels"
+  s.homepage     = "https://github.com/spinels/spinels"
   s.summary      = "Spinels."
   s.description  = "Spinels placeholder gem."
   s.license      = "MIT"
