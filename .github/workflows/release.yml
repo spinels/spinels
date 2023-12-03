@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: The version to release
+        required: true
+        default: patch
+        type: choice
+        options:
+        - major
+        - minor
+        - patch
+        - pre
+        - release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+      - uses: rubygems/configure-rubygems-credentials@main
+        with:
+          role-to-assume: ${{ secrets.RUBYGEMS_API_KEY_ROLE }}
+      - run: |
+          gem install gem-release
+      - run: |
+          gem bump --version ${{ inputs.version }} --push --tag --release
