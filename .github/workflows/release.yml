@@ -18,6 +18,9 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # This is required for requesting the JWT
+      contents: write  # This is required for actions/checkout and bump
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
