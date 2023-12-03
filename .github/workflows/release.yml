@@ -31,8 +31,10 @@ jobs:
           git config --global user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
           git config --global user.name "${{ github.actor }}"
       - run: |
-          gem install gem-release
+          gem build spinels.gemspec
+          gem install ./spinels-.gem
+          rm spinels-*.gem
       - run: |
-          gem bump --pretend --version ${{ inputs.version }} --push --tag --release
+          gem install gem-release
       - run: |
           gem bump --version ${{ inputs.version }} --push --tag --release
