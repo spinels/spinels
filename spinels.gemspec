@@ -16,4 +16,5 @@ Gem::Specification.new do |s|
   s.files        = Dir.glob("{lib}/**/*") + %w[README.md]
   s.require_path = "lib"
   s.required_ruby_version = ">= 3.1.2"
+  s.rubygems_mfa_required = true
 end
